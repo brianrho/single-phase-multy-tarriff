@@ -19,7 +19,7 @@
 #define		COM_r3		0x30//
 
 
-
+////////////////
 
  //this displaying meter order can not be changed randomly The data should be gotten in order when reading modules
 const  int16u   code  ComDisTab[] =
