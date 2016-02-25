@@ -1,0 +1,85 @@
+
+#include 	<msp430x14x.h>
+
+			NAME ASMS_Process
+
+            RSEG CODE
+
+;==============================================
+			PUBLIC _BCD1INC
+_BCD1INC:   CLRC
+            DADD.B   #1,0(R12)
+            RET
+;==============================================
+			PUBLIC _BCD2INC
+_BCD2INC:   CLRC
+            DADD.B   #1,0(R12)
+            DADC.B   1(R12)
+            RET
+;============================================== aju
+			PUBLIC _BCD3INC
+_BCD3INC:   CLRC
+            DADD.B   #1,0(R12)
+            DADC.B   1(R12)
+            DADC.B   2(R12)
+            RET      
+;==============================================
+			PUBLIC _BCD4INC
+_BCD4INC:   CLRC
+            DADD.B   #1,0(R12)
+            DADC.B   1(R12)
+            DADC.B   2(R12)
+            DADC.B   3(R12)
+            RET
+;==============================================
+            PUBLIC _BCD5INC
+_BCD5INC:   CLRC
+            DADD.B   #1,0(R12)
+            DADC.B   1(R12)
+            DADC.B   2(R12)
+            DADC.B   3(R12)
+            DADC.B   4(R12)
+            RET
+;==============================================
+			PUBLIC _BCD1DEC
+_BCD1DEC:   CLRC
+            DADD.B   #0x99,0(R12)
+            RET     
+;==============================================aju
+			PUBLIC _BCD2DEC
+_BCD2DEC:   CLRC
+            DADD.B   #0x99,0(R12)
+            DADD.B	 #0x99,1(R12)
+            RET       
+;==============================================
+			PUBLIC _BCD4ADD
+_BCD4ADD:   CLRC
+            DADD.B   @R14+,0(R12)
+            DADD.B   @R14+,1(R12)
+            DADD.B   @R14+,2(R12)
+            DADD.B   @R14,3(R12)
+            RET
+;==============================================
+			PUBLIC _BCD5ADD
+_BCD5ADD:   CLRC
+            DADD.B   @R14+,0(R12)
+            DADD.B   @R14+,1(R12)
+            DADD.B   @R14+,2(R12)
+            DADD.B   @R14+,3(R12)
+            DADD.B   @R14, 4(R12)
+            RET
+;==============================================aju
+			PUBLIC	_BCD3ADD
+_BCD3ADD:	CLRC
+			DADD.B   @R14+,0(R12)
+            DADD.B   @R14+,1(R12)
+            DADD.B   @R14,2(R12)            
+            RET
+;==============================================aju
+			PUBLIC	_BCD1ADD
+_BCD1ADD:	CLRC
+			DADD.B   @R14,0(R12)
+            RET
+
+
+			END
